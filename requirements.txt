@@ -1,0 +1,6 @@
+Flask
+pycryptodomex
+prettytable
+tqdm
+requests
+asyncio

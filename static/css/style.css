@@ -1,0 +1,186 @@
+body {
+  background: url("./nasa-Q1p7bh3SHj8-unsplash.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.navbar-brand,
+.nav-link,
+.navbar-toggler-icon,
+.navbar-toggler,
+.my-4 {
+  color: white !important;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.glass-input::placeholder {
+  color: #fff;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.glass-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: none;
+}
+
+.glass-table {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  color: #000;
+}
+
+.table {
+  --bs-table-bg: rgb(255 255 255 / 0%);
+  border-color: rgb(255 255 255 / 0%);
+  --bs-table-color: white;
+  margin-bottom: 0;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: none;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.filter-toggle {
+  cursor: pointer;
+}
+
+.alert-fading-out {
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.total-size-display {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.progress-bar-container {
+  display: none;
+  margin-top: 10px;
+}
+.speed-display {
+  margin-top: 5px;
+}
+
+/* 2222 */
+/* body {
+  background: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px;
+}
+
+.glass-input::placeholder {
+  color: #fff;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.glass-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.glass-table {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  color: #000;
+  padding: 15px;
+  width: 100%;
+}
+
+.total-size-display {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  color: #fff;
+}
+
+.table thead th {
+  color: #fff;
+}
+
+.table tbody tr {
+  color: #000;
+} */
