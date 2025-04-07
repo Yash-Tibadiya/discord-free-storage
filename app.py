@@ -1,12 +1,12 @@
-from flask import Flask,request, render_template, request, send_file, redirect, url_for, after_this_request, flash, get_flashed_messages, Response, jsonify
-from Cryptodome.Cipher import AES 
-from Cryptodome.Random import get_random_bytes
+from flask import Flask,request, render_template, request, send_file, redirect, url_for, after_this_request, flash, get_flashed_messages, Response, jsonify # type: ignore
+from Cryptodome.Cipher import AES  # type: ignore
+from Cryptodome.Random import get_random_bytes # type: ignore
 import os
 import sqlite3
 from datetime import datetime
-from prettytable import PrettyTable
-from tqdm import tqdm
-import requests
+from prettytable import PrettyTable # type: ignore
+from tqdm import tqdm # type: ignore
+import requests # type: ignore
 import concurrent.futures
 import asyncio
 import time
@@ -25,6 +25,24 @@ WEBHOOK_URL = env.WEBHOOK_URL
 PREFIX = '!'
 
 FILE_PATH_SEP = '\\' if platform.system() == 'Windows' else '/'
+
+#//////////////////////////////////////////////////////////
+def init_db():
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS files
+                      (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      file_name TEXT,
+                      chunk_list TEXT,
+                      key_hex TEXT,
+                      file_size INTEGER,
+                      upload_date TEXT)''')
+    conn.commit()
+    conn.close()
+
+# Call init_db() right after app initialization
+init_db()
+#////////////////////////////////////////////////////////////////
 
 def create_path(*args):
     """Create a file path suitable for the current operating system."""
@@ -390,7 +408,9 @@ async def process_file(file_path):
     save_to_database(input_file, chunks_urls, key_hex)
 
 def split_and_encrypt(input_file, output_directory, key):
-    chunk_size = 23 * 1024 * 1024
+    # Discord's free tier limit is 25MB, but webhook/bot uploads might have lower practical limits.
+    # Reducing chunk size to 8MB to avoid 413 Payload Too Large errors.
+    chunk_size = 8 * 1024 * 1024
 
     with open(input_file, 'rb') as file:
         data = file.read()
